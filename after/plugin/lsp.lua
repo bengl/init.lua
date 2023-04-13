@@ -5,18 +5,28 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'bashls',
+  'clangd',
+  'html',
+  'jsonls',
+  'lua_ls',
+  'rust_analyzer',
+  'tsserver',
+  'vimls',
+  'yamlls',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
+-- lsp.configure('lua-language-server', {
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { 'vim' }
+--             }
+--         }
+--     }
+-- })
+lsp.nvim_workspace()
 
 
 local cmp = require('cmp')
